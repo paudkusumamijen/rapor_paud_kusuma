@@ -8,8 +8,8 @@ const cleanEnv = (val: any) => {
     return str;
 };
 
-const viteSbUrl = typeof import.meta !== 'undefined' && (import.meta as any).env ? (import.meta as any).env.VITE_SUPABASE_URL : "https://kjrppcoulmfmvreurhvc.supabase.co";
-const viteSbKey = typeof import.meta !== 'undefined' && (import.meta as any).env ? (import.meta as any).env.VITE_SUPABASE_KEY : "sb_publishable_89D0z4R04E2GMbEoHwfGkA_U2KNzVgb";
+const viteSbUrl = typeof import.meta !== 'undefined' && (import.meta as any).env ? (import.meta as any).env.VITE_SUPABASE_URL : "";
+const viteSbKey = typeof import.meta !== 'undefined' && (import.meta as any).env ? (import.meta as any).env.VITE_SUPABASE_KEY : "";
 const viteAiKey = typeof import.meta !== 'undefined' && (import.meta as any).env ? (import.meta as any).env.VITE_API_KEY : "";
 
 const procSbUrl = typeof process !== 'undefined' && process.env ? process.env.REACT_APP_SUPABASE_URL : "";
