@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapor PAUD Kurikulum Merdeka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #1e293b; }
+      
+      @media print {
+        /* Sembunyikan elemen navigasi dan utama aplikasi */
+        aside, .no-print {
+          display: none !important;
+        }
+
+        /* Pastikan elemen layout utama tidak memiliki batasan tinggi atau overflow */
+        html, body, #root {
+          height: auto !important;
+          overflow: visible !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          background-color: white !important; /* Pastikan latar belakang putih */
+          color: black !important; /* Pastikan teks hitam */
+        }
+
+        /* Konten utama yang berisi children (rapor) */
+        main {
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          max-width: none !important;
+          flex: none !important;
+          display: block !important;
+          overflow: visible !important;
+          height: auto !important;
+        }
+
+        /* Kontainer p-8 di dalam main yang membungkus children */
+        main > div:first-child { /* Target div.p-8 langsung di bawah main */
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        
+        /* Area cetak (rapor) harus tampil normal seperti dokumen */
+        #print-area {
+          visibility: visible !important;
+          position: static !important; /* Pastikan kembali ke posisi normal */
+          left: auto !important;
+          top: auto !important;
+          width: 100% !important;
+          min-height: auto !important;
+          margin: 0 !important;
+          padding: 20px !important; /* Padding kertas */
+          background-color: white !important;
+          box-shadow: none !important;
+          color: black !important;
+          z-index: auto !important; /* Reset z-index */
+        }
+        
+        /* Pastikan semua elemen di dalam print-area terlihat */
+        #print-area * {
+          visibility: visible !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
+    "xlsx": "https://aistudiocdn.com/xlsx@^0.18.5",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.39.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
